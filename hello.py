@@ -8,9 +8,10 @@ app = Flask(__name__)
 def hello():
     return "Hello Flask!"
 
-
+# Decorador que indica la ruta, función a ejecutar cuando la ruta es llamada
 @app.route("/faq")
 def faq():
+    # Lo que la función regresa es lo que la ruta devolverá
     return "Trying my own route"
 
 # No correr accidentalmente este archivo si es importado

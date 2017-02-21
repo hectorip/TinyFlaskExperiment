@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 # Esto es para que tome el nombre del módulo y localizar dependencias
 app = Flask(__name__)
@@ -18,8 +18,12 @@ def faq():
 
 @app.route("/html")
 def html():
-    buenoreturn render_template("test1.html")
+    return render_template("test1.html")
 
+
+@app.route("/params/<param>")
+def route_parameters(param):
+    return render_template("templates_with_params.html", param=param)
 # @app.route("/echo")
 # def echo():
 #     response_string = "Recibí: "
